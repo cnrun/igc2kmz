@@ -2,15 +2,16 @@
 igc2kmz is a tool to convert IGC (flight recorder) to KMZ/KML (Google Earth).
 
 > *It's aTypescript port of Tom Payne's python tool [igc2kmz](https://github.com/twpayne/igc2kmz)*
+> *This repository is a fork from [igc2kmz](https://spasutto.github.io/igc2kmz)*
 
-**The resulting tool is available online here : [&#x2192; igc2kmz.html &#x2190;](https://spasutto.github.io/igc2kmz/igc2kmz.html)** (it can also be used in command line, see [below](#usage))
+**The resulting tool is available online here : [&#x2192; igc2kmz.html &#x2190;](https://cnrun.github.io/igc2kmz/igc2kmz.html)** (it can also be used in command line, see [below](#usage))
 
 igc2kmz is a PWA (Progessive Web App) wich means you can install it and use it offline just like any app on your smartphone (at least on modern android). Just click 'install' in your browser's menu
 
 [![Visualisation example](doc/output_MtBlanc.jpg?raw=true)](doc/output_MtBlanc.jpg?raw=true)
 
 ## Usage
-Just go to [https://spasutto.github.io/igc2kmz/igc2kmz.html](https://spasutto.github.io/igc2kmz/igc2kmz.html) and select an IGC file or drag/drop it in the yellow/greenish zone.
+Just go to [https://cnrun.github.io/igc2kmz/igc2kmz.html](https://cnrun.github.io/igc2kmz/igc2kmz.html) and select an IGC file or drag/drop it in the yellow/greenish zone.
 
 You can also drop :
 - images ; they will be incorporated in the KMZ at the right time (if time coded in EXIF).
@@ -19,7 +20,7 @@ You can also drop :
 Click 'Convert' and there it is. The 'tool' icon 🔧 open the options in wich you can customize the behaviours of the KMZ generation. Interactive help is provided in the popup.
 
 ## Code
-**For the web** : See [igc2kmz.html](igc2kmz.html) or [example.html](examples/example.html) ('*hello world*' code), Single Page Application [available here](https://spasutto.github.io/igc2kmz/dist/igc2kmz_spa.html) (right click and save it to computer/phone)
+**For the web** : See [igc2kmz.html](igc2kmz.html) or [example.html](examples/example.html) ('*hello world*' code), Single Page Application [available here](https://cnrun.github.io/igc2kmz/dist/igc2kmz_spa.html) (right click and save it to computer/phone)
 
 :warning: As of now, web version runs on the UI thread and on slow machines or with big flight it can block the page for some time :boom:
 
@@ -50,9 +51,9 @@ Upload to [Google Earth](https://earth.google.com/web/), voilà!
 [![Visualisation example](doc/task.jpg?raw=true)](doc/task.jpg?raw=true)
 
 ## Build
-Get [sources from the repository](https://github.com/spasutto/igc2kmz) and install npm dependencies
+Get [sources from the repository](https://github.com/cnrun/igc2kmz) and install npm dependencies
 ```
-git clone https://github.com/spasutto/igc2kmz.git
+git clone https://github.com/cnrun/igc2kmz.git
 cd igc2kmz
 npm install
 ```
@@ -69,7 +70,7 @@ npm run buildnode # for use as library
 ## Reusing
 ### web
 
-[build web/minify version first](#build), then see [examples/example.html](https://github.com/spasutto/igc2kmz/blob/master/examples/example.html)
+[build web/minify version first](#build), then see [examples/example.html](https://github.com/cnrun/igc2kmz/blob/master/examples/example.html)
 
 ### node
 [build node version first](#build), copy `dist/igc2kmz.js` then in a new javascript file :

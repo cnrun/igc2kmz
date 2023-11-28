@@ -624,7 +624,9 @@ let options = [
   // GROUP, FIELDNAME, TYPE, LABEL, HELP, [ MIN,   MAX ]
   ['Global', 'tz_offset', 'number', 'Timezone offset', 'Shift each record from offset, in hours', [-12, 12]],
   ['Global', 'same_start', 'checkbox', 'Align launch time', 'Apply first flight\'s launch time to subsequent flights (flight comparison)'],
+  ['Global', 'minimal_size_export', 'checkbox', 'Minimal export', 'do not export invisible elements to reduce size (ideal for heatmaps)'],
   ['IGC', 'pressure_altitude', 'checkbox', 'Use pressure altitude', 'Use barometric altitude (if available) instead of GPS'],
+  ['IGC', 'auto_gpsaltitude_correction', 'checkbox', 'Fix barometric altitude', 'Fix barometric altitude with first GPS point.'],
   ['IGC', 'qnh', 'number', 'QNH', 'QNH for barometric altitude correction (if used, cf "use pressure altitude")'],
   ['Animation', 'anim_tail', 'checkbox', 'Show tail', 'Show colored tail following paraglider\'s path'],
   ['Animation', 'anim_tail_duration', 'number', 'Tail duration', 'Length in seconds for the colored tail. -1 for infinity (till launch)', [0]],

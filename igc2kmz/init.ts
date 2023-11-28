@@ -12,6 +12,10 @@ import { SimpleCanvas } from "./simplecanvas";
 
 export interface I2KConfiguration {
   /**
+   * do not export invisible nodes
+   */
+  minimal_size_export: boolean;
+  /**
    * timezone offset to apply
    */
   tz_offset: number;
@@ -19,6 +23,10 @@ export interface I2KConfiguration {
    * Use barometric altitude instead of GPS
    */
   pressure_altitude: boolean;
+  /**
+   * Wenn using pressure_altitude, fix the altitude with the first GPS point
+   */
+  auto_gpsaltitude_correction: boolean;
   /**
    * QNH for barometric altitude
    */
@@ -73,7 +81,9 @@ export interface I2KConfiguration {
 
 export const defaultconfig: I2KConfiguration = {
   tz_offset: 0,
-  pressure_altitude: false,
+  minimal_size_export: true,
+  pressure_altitude: true,
+  auto_gpsaltitude_correction: true,
   qnh: SEALEVEL_QNH,
   same_start: false,
   solid_color: '#ff0000',

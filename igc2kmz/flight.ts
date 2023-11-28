@@ -181,7 +181,8 @@ export class Flight {
       folder.add(new KML.Placemark(null, multi_geometry, [], line_style.url));
       tp0 = tp1;
     }
-    return new KMZ([folder]);
+    folder.add(new KML.visibility(false));
+    return new KMZ([folder])
   }
 
   make_solid_track(globals: FlightConvert, style: KML.Style, altitude_mode: string, name: string, visibility: boolean | null = null, extrude: boolean = false): KMZ {
@@ -377,7 +378,7 @@ export class Flight {
     let folder = new KMZ([new KML.Folder('Shadow', style_url, [], false, globals.flights.length <= 1)]);
     folder.add([globals.stock.invisible_none_folder]);
     let style = new KML.Style([new KML.LineStyle('ff000000', '1')]);
-    folder.add([this.make_solid_track(globals, style, 'clampToGround', 'Normal')]);
+    folder.add([this.make_solid_track(globals, style, 'clampToGround', 'Normal', false)]);
     let line_style = new KML.LineStyle('00000000', '1');
     let polyline_color = RGBA.fromRGBAHexString(globals.options.extrude_color);
     if (!polyline_color) {
@@ -522,7 +523,8 @@ export class Flight {
     let table = Utils.make_table(rows);
     let snippet = `${this.track.xc_score.solution.opt.scoring.name} ${score.score}pts`;
     let style_url = globals.stock.check_hide_children_style.url;
-    let folder = new KML.Folder('Score', style_url, [new KML.CDATA('description', table), new KML.Snippet(snippet)], null, globals.flights.length <= 1);
+    let is_visible = false
+    let folder = new KML.Folder('Score', style_url, [new KML.CDATA('description', table), new KML.Snippet(snippet)], null, is_visible);
     let line_style = new KML.Style([new KML.LineStyle('cc00FF00', '1')]);
     folder.add(line_style);
     let line_style1 = new KML.Style([new KML.LineStyle('ccFFFFFF', '1')]);

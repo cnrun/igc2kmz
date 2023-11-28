@@ -170,7 +170,7 @@ export class FlightConvert {
 
     if (flights.length == 1) {
       if (flights[0].track.elevation_data) {
-        this.default_track = 'climb';
+        this.default_track = 'altitude';
       } else {
         this.default_track = 'speed';
       }

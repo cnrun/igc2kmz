@@ -25,7 +25,7 @@ Click 'Convert' and there it is. The 'tool' icon 🔧 open the options in wich y
 
 **Command line** : [build first](#build) then on a prompt :
 ```
-node dist\igc2kmz.cmd.js examples\flight.igc
+node dist/igc2kmz.cmd.js examples/flight.igc
 ```
 Upload to [Google Earth](https://earth.google.com/web/), voilà!
 
